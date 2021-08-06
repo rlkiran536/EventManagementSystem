@@ -23,7 +23,7 @@ public class UpdateUser extends HttpServlet {
 		String rePassword = request.getParameter("rePassword");
 		int userIdNumber = 0;
 		if(!checkInfo(userId,password,rePassword)) {
-			response.sendRedirect("/EventManagementSystem/user");
+			response.sendRedirect("/EventManagementSystem/");
 			return;
 		}
 		userIdNumber = Integer.parseInt(userId);				
@@ -32,7 +32,7 @@ public class UpdateUser extends HttpServlet {
 			if(allUsers!=null && allUsers.size()>0){
 				if(eu.checkString(userId)) {
 					if(checkUserExists(allUsers,username)) {
-						response.sendRedirect("/EventManagementSystem/user");
+						response.sendRedirect("/EventManagementSystem/");
 						return;
 					}	
 					for(UserModel tempUser:allUsers) {
@@ -43,7 +43,7 @@ public class UpdateUser extends HttpServlet {
 							if(eu.checkString(role) && !role.equals("ADMINISTRATOR")) tempUser.setRole(role);
 							Boolean updateStatus = new UserDao().updateUser(tempUser);
 							if(updateStatus) {
-								response.sendRedirect("/EventManagementSystem/user");
+								response.sendRedirect("/EventManagementSystem/");
 								return;
 							}
 						}
@@ -54,7 +54,7 @@ public class UpdateUser extends HttpServlet {
 			//not enough privilages to update user
 		}
 		//error popup unable to update user
-		response.sendRedirect("/EventManagementSystem/user");
+		response.sendRedirect("/EventManagementSystem/");
 	}
 
 	Boolean checkInfo(String userId,String password,String rePassword) {

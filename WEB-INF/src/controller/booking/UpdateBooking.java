@@ -35,7 +35,7 @@ public class UpdateBooking extends HttpServlet {
 							booking.setReason(reason);
 							Boolean bookingUpdateStatus = new BookingDao().updateBooking(booking);
 							if(bookingUpdateStatus) {
-								response.sendRedirect("/EventManagementSystem/user");
+								response.sendRedirect("/EventManagementSystem/");
 								return;
 							} 
 						}
@@ -48,7 +48,7 @@ public class UpdateBooking extends HttpServlet {
 			//invalid reason
 		}
 		//show error popup
-		response.sendRedirect("/EventManagementSystem/user");
+		response.sendRedirect("/EventManagementSystem/");
 	}
 
 }

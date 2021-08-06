@@ -9,5 +9,63 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <security-constraint>
+  <web-resource-collection>
+    <web-resource-name>index</web-resource-name>
+    <url-pattern>/</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+    <role-name>ADMINISTRATOR</role-name>
+    <role-name>STUDENT</role-name>
+    <role-name>FACULTY</role-name>
+  </auth-constraint>
+</security-constraint>
   
+  <security-constraint>
+  <web-resource-collection>
+    <web-resource-name>Administrator</web-resource-name>
+    <url-pattern>/admin/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+    <role-name>ADMINISTRATOR</role-name>
+  </auth-constraint>
+</security-constraint>
+
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>Faculty</web-resource-name>
+    <url-pattern>/faculty/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+    <role-name>FACULTY</role-name>
+  </auth-constraint>
+</security-constraint>
+
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>Student</web-resource-name>
+    <url-pattern>/student/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+    <role-name>STUDENT</role-name>
+  </auth-constraint>
+</security-constraint>
+
+<security-role>
+  <role-name>ADMINISTRATOR</role-name>
+</security-role>
+<security-role>
+  <role-name>FACULTY</role-name>
+</security-role>
+<security-role>
+  <role-name>STUDENT</role-name>
+</security-role>
+
+<login-config>
+  <auth-method>FORM</auth-method>
+  <form-login-config>
+    <form-login-page>/login.jsp</form-login-page>
+    <form-error-page>/error.jsp</form-error-page>
+  </form-login-config>
+</login-config>
 </web-app>

@@ -31,7 +31,7 @@ public class AddUser extends HttpServlet {
 						newUser.setPassword(password);
 						newUser = new UserDao().addUser(newUser);
 						if(newUser!=null) {
-							response.sendRedirect("/EventManagementSystem/user");
+							response.sendRedirect("/EventManagementSystem/");
 							return;				
 						}
 					} else {
@@ -47,6 +47,6 @@ public class AddUser extends HttpServlet {
 			//not enough privilages to add user
 		}
 		//error popup unable to add user
-		response.sendRedirect("/EventManagementSystem/user");
+		response.sendRedirect("/EventManagementSystem/");
 	}
 }

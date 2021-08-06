@@ -42,7 +42,7 @@ public class RegistrationController extends HttpServlet {
 		} else {
 			//empty fields
 		}
-		if(status) response.sendRedirect("/EventManagementSystem/user");
+		if(status) response.sendRedirect("/EventManagementSystem/");
 		else response.sendRedirect("/EventManagementSystem/register.jsp");
 	}
 }

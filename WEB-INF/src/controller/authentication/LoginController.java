@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet {
 			UserModel user = new UserDao().userLogin(username,password);
 			if(user!=null) {
 				session.setAttribute("user",user);			
-				response.sendRedirect("/EventManagementSystem/user");
+				response.sendRedirect("/EventManagementSystem/");
 			} else {
 				//user doesnot exists 
 			}

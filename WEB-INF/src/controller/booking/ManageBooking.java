@@ -29,7 +29,7 @@ public class ManageBooking extends HttpServlet {
 								booking.setStatus("REJECTED");
 								Boolean bookingStatus = new BookingDao().updateBooking(booking);
 								if(bookingStatus) {
-									response.sendRedirect("/EventManagementSystem/user");
+									response.sendRedirect("/EventManagementSystem/");
 									return;
 								}
 							}
@@ -39,7 +39,7 @@ public class ManageBooking extends HttpServlet {
 								if(bookingStatus) {
 									Boolean roomStatus = new RoomDao().updateRoom(booking.getRoom(),booking.getId());
 									if(roomStatus) {
-										response.sendRedirect("/EventManagementSystem/user");
+										response.sendRedirect("/EventManagementSystem/");
 										return;
 									} else {
 										//failed to update room
@@ -52,6 +52,6 @@ public class ManageBooking extends HttpServlet {
 			}
 		}
 		//error updating booking
-		response.sendRedirect("/EventManagementSystem/user");
+		response.sendRedirect("/EventManagementSystem/");
 	}
 }

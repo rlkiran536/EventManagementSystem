@@ -30,7 +30,7 @@ public class AddBooking extends HttpServlet {
 			for(BookingModel userBooking:bookings) {
 				if(userBooking.getRoom() == roomNumber) {
 					if(userBooking.getUserId() == user.getId()) {
-						response.sendRedirect("/EventManagementSystem/user");
+						response.sendRedirect("/EventManagementSystem/");
 						return;	
 					}					
 				}
@@ -52,7 +52,7 @@ public class AddBooking extends HttpServlet {
 					if(user.getRole().equals("FACULTY") || user.getRole().equals("ADMINISTRATOR")) {
 						Boolean bookingStatus = new RoomDao().updateRoom(roomNumber,bookingId);
 						if(bookingStatus) {
-							response.sendRedirect("/EventManagementSystem/user");
+							response.sendRedirect("/EventManagementSystem/");
 							return;
 						} else {
 						//failed to update room
@@ -67,6 +67,6 @@ public class AddBooking extends HttpServlet {
 		} else {
 			//invalid inputs
 		}
-		response.sendRedirect("/EventManagementSystem/user");
+		response.sendRedirect("/EventManagementSystem/");
 	}
 }

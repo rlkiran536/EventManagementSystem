@@ -31,7 +31,7 @@ public class RemoveBooking extends HttpServlet {
 							if(!roomStatus) { // error updating room
 							}
 						}
-						response.sendRedirect("/EventManagementSystem/user");
+						response.sendRedirect("/EventManagementSystem/");
 						return;
 					}
 				}
@@ -40,6 +40,6 @@ public class RemoveBooking extends HttpServlet {
 			//invalid room
 		}
 		//show error popup
-		response.sendRedirect("/EventManagementSystem/user");
+		response.sendRedirect("/EventManagementSystem/");
 	}
 }

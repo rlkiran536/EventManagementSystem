@@ -35,11 +35,11 @@ public class RemoveUser extends HttpServlet {
 						}
 					}
 				}
-				response.sendRedirect("/EventManagementSystem/user");
+				response.sendRedirect("/EventManagementSystem/");
 				return;		
 			}
 		}
 		//error popup unable to remove user
-		response.sendRedirect("/EventManagementSystem/user");
+		response.sendRedirect("/EventManagementSystem/");
 	}
 }
